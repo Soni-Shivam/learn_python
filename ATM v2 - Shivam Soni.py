@@ -4,14 +4,17 @@ c_balance = 15000
 pin = input("Welcome to the ATM\nPlease Enter your account PIN \n")
 current_pin = "1234"
 
+# if Pin is incorrect Ask PIN
 while pin != current_pin:
     print("Please try again.\nError Code: Invalid Pin")
     pin = input("\nPlease Enter your account PIN \n")
 
+# if Pin is correct keep using
 while pin == current_pin:
     print(' 1 - View Balance \n 2 - Withdraw \n 3 - Deposit \n 4 - Change PIN\n 5 - Exit ')
     selection = input("Please enter Your Selection\n")
 
+    # Function to Handle Errors
     def error(e_code):
         if e_code == "inv_acc":
             print("Please try again.\nError Code: Invalid Account")
